@@ -1,0 +1,61 @@
+<form class="form" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+
+  <mat-form-field>
+    <mat-label>Enter first name: </mat-label>
+    <input matInput formControlName="firstName" [class.invalid]="
+          registerForm.get('firstName')?.invalid &&
+          (registerForm.get('firstName')?.dirty ||
+            registerForm.get('firstName')?.touched ||
+            isSubmitted)
+        ">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Enter last name: </mat-label>
+    <input matInput formControlName="lastName" [class.invalid]="
+          registerForm.get('lastName')?.invalid &&
+          (registerForm.get('lastName')?.dirty ||
+            registerForm.get('lastName')?.touched ||
+            isSubmitted)
+        ">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Enter CNP: </mat-label>
+    <input matInput formControlName="cnp" [class.invalid]="
+          registerForm.get('cnp')?.invalid &&
+          (registerForm.get('cnp')?.dirty ||
+            registerForm.get('cnp')?.touched ||
+            isSubmitted)
+        ">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Enter email: </mat-label>
+    <input matInput placeholder="pat@example.com" formControlName="email" [class.invalid]="
+          registerForm.get('email')?.invalid &&
+          (registerForm.get('email')?.dirty ||
+            registerForm.get('email')?.touched ||
+            isSubmitted)
+        ">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Enter password: </mat-label>
+    <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" [class.invalid]="
+          registerForm.get('password')?.invalid &&
+          (registerForm.get('password')?.dirty ||
+            registerForm.get('password')?.touched ||
+            isSubmitted)
+        ">
+    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+      [attr.aria-pressed]="hide">
+      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </button>
+  </mat-form-field>
+
+  <div>
+    <button mat-raised-button color="primary" type="submit" class="button">Register student</button>
+  </div>
+</form>

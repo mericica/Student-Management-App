@@ -1,0 +1,51 @@
+DELETE http://localhost:8080/user/deleteGrade/31/3
+
+    http://localhost:8080/user
+
+GET localhost:8080/user/
+
+GET localhost:8080/user?name=Ana
+
+###
+PUT localhost:8080/user/assignGrade
+Content-Type: application/json
+
+{
+  "user": {
+    "id": 3
+  },
+  "course": {
+    "id": 3
+  },
+  "grade": "10"
+}
+
+
+
+POST localhost:8080/user/create
+Content-Type: application/json
+
+{
+  "firstName": "Max2",
+  "lastName": "Musterman",
+  "cnp": "6628765456780",
+  "email": "email3@.com",
+  "password": "Pass1"
+}
+
+GET localhost:8080/user/courses
+
+GET localhost:8080/user/
+
+PUT localhost:8080/user/assignGrade
+Content-Type: application/json
+
+{
+"user": {
+"id": 3
+},
+"course": {
+"id": 2
+},
+"grade": "7"
+}

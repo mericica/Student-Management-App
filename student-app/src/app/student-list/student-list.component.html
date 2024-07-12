@@ -1,0 +1,22 @@
+<div class="search-page">
+  <div class="searchBar">
+    <label for="search-input"> </label>
+    <!--<input #searchBox id="search-input" type="text" placeholder="Search..." (input)="search(searchBox.value)">-->
+    <input #filter id="search-input" type="text" placeholder="Search...">
+
+    <button id="search-button" type="submit" (click)="filterUser(filter.value)">search</button>
+
+  </div>
+
+  <div class="student-card">
+    <mat-card *ngFor="let student of students" class="student-boxes">
+      <mat-card-header>
+        <div mat-card-avatar class="student-avatar"></div>
+        <mat-card-title>
+          <button (click)="goToStudentDetails(student)">{{ student.firstName }} {{ student.lastName }}</button>
+        </mat-card-title>
+        <mat-card-subtitle>ID: {{ student.id }}</mat-card-subtitle>
+      </mat-card-header>
+    </mat-card>
+  </div>
+</div>

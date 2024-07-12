@@ -1,0 +1,26 @@
+<div class="container">
+    <highcharts-chart #chart [Highcharts]="Highcharts" [options]="chartOptions"
+        style="width: 800px; height: 400px; display: block;"></highcharts-chart>
+    <mat-form-field>
+        <mat-label>Student 1</mat-label>
+        <mat-select>
+            <mat-option *ngFor="let student of allStudents" (click)="selectStudent(student, 0)"
+                value="student.firstName">{{student.firstName}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Student 2</mat-label>
+        <mat-select>
+            <mat-option *ngFor="let student of allStudents" (click)="selectStudent(student, 1)"
+                value="student.firstName">{{student.firstName}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Student 3</mat-label>
+        <mat-select>
+            <mat-option *ngFor="let student of allStudents" (click)="selectStudent(student, 2)"
+                value="student.firstName">{{student.firstName}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>

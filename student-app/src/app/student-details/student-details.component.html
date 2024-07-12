@@ -1,0 +1,107 @@
+<div class="container" style=" width: 100%; background: white; border-radius: 10%; padding: 10%;">
+  <h1>Student Details</h1>
+
+  <div *ngIf="windowMode=='default'">
+    <table>
+      <tr>
+        <th>ID</th>
+        <td>{{ selectedStudent.id }}</td>
+      </tr>
+      <tr>
+        <th>Name</th>
+        <td>{{ selectedStudent.firstName }} {{ selectedStudent.lastName }}</td>
+      </tr>
+      <tr>
+        <th>Cnp</th>
+        <td>{{ selectedStudent.cnp }}</td>
+      </tr>
+      <tr>
+        <th>Email</th>
+        <td>{{ selectedStudent.email }}</td>
+      </tr>
+
+    </table>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Grade</th>
+          <th>Course</th>
+          <th>Semester</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let grade of selectedStudent.grades">
+          <td style="text-align: center;">{{ grade.grade }}</td>
+          <td style="text-align: center;">{{ grade.course.name }}</td>
+          <td style="text-align: center;">{{ grade.course.semester }}</td>
+          <td style="text-align: center;">
+
+            <button mat-icon-button color="warn" (click)="deleteGrade(grade)">
+              <mat-icon>close</mat-icon>
+            </button>
+
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div>
+      <p>Average: {{ average ? average.toFixed(2) : " " }}</p>
+    </div>
+    <button mat-raised-button color="primary" type="button" class="delete" title="delete hero" (click)="delete()">Delete
+      <button mat-raised-button color="primary" type="button" (click)="goToUpdate()">Update user</button>
+
+
+
+      <button mat-raised-button color="primary" type="button" (click)="addGrade()">Add Grade</button>
+    </button>
+  </div>
+
+  <div class="update-delete-container">
+
+
+
+    <div id="update-section" *ngIf="windowMode=='update'">
+      <div>
+        <label for="first-name">Edit first name: </label>
+        <input id="first-name" type="text" [(ngModel)]="newFirstName">
+      </div>
+
+      <div>
+        <label for="last-name">Edit last name: </label>
+        <input id="last-name" type="text" [(ngModel)]="newLastName">
+      </div>
+
+      <div>
+        <label for="cnp">Edit cnp: </label>
+        <input id="cnp" type="text" [(ngModel)]="newCNP">
+      </div>
+
+      <div style="margin-top: 20px;">
+        <button mat-raised-button color="light-gray" type="button" (click)="goToDefault()">back</button>
+        <button mat-raised-button color="primary" type="button" (click)="save()">save</button>
+      </div>
+    </div>
+
+
+  </div>
+
+  <div *ngIf="windowMode=='addGrade'">
+    <h2>Select Course</h2>
+    <div style="margin-bottom: 20px;" *ngFor="let course of courses">
+      <button mat-raised-button type="button" (click)="selectCourse(course)"
+        [ngStyle]="{'background-color': course.id === this.selectedCourse.id ? 'blue' : 'white'}">{{course.name}}</button>
+    </div>
+    <div>
+      <label for="grade">Enter new Grade: </label>
+      <input id="grade" type="text" [(ngModel)]="newGrade.grade">
+    </div>
+    <div style="margin-top: 20px;">
+      <button mat-raised-button style="margin-right: 5%; background-color: lightslategray;" type="button"
+        (click)="goToDefault()">back</button>
+      <button mat-raised-button type="button" (click)="addGradeToStudent()"
+        [ngStyle]="{'background-color': newGrade.grade ? 'green' : 'white'}">Confirm</button>
+    </div>
+  </div>
+
+
+</div>

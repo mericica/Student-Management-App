@@ -1,0 +1,15 @@
+div[ngIf="windowMode=='addGrade'"] {
+    .button {
+        background-color: blue;
+        color: white;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: darkblue;
+        }
+
+        &.clicked {
+            background-color: green;
+        }
+    }
+}

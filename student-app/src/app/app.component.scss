@@ -1,0 +1,148 @@
+#align {
+  display: flex;
+  gap: 40px;
+}
+
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+#banner {
+  //background-image: url("https://gallery.yopriceville.com/var/albums/Free-Clipart-Pictures/Ribbons-and-Banners-PNG/Pink_Banner_Transparent_PNG_Clip_Art_Image-1679440309.png?m=1629811004");
+  background-repeat: no-repeat;
+  height: 170px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  text-align: center;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+#title {
+  text-align: center;
+  position: absolute;
+  margin-left: 38rem;
+  margin-top: 40px;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#align {
+  display: flex;
+  height: 100%;
+}
+
+#navbar {
+  background-color: beige;
+  padding: 20px 50px;
+}
+
+button:hover {
+  color: deeppink;
+}
+
+
+.example-container {
+  width: 230px;
+  min-width: 250px;
+  max-width: 250px;
+  color: aquamarine;
+
+}
+
+button {
+  text-align: center;
+}
+
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: rgb(6, 75, 21);
+}
+
+.centered span {
+  position: relative;
+  display: inline-block;
+  color: #fff;
+  animation: animate 2s ease-in-out;
+  animation-delay: calc(0.1s * var(--i));
+}
+
+@keyframes animate {
+  0% {
+    transform: translateY(0px);
+  }
+
+  20% {
+    transform: translateY(-20px);
+  }
+
+  40%,
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+
+footer {
+  bottom: 0;
+  position: fixed;
+  text-align: center;
+  padding: 10px 0;
+  background-color: #333;
+  color: #fff;
+  width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+
+  /* Adjusting sidebar width and padding for mobile */
+  #navbar {
+    padding: 10px;
+    /* Adjust padding for mobile */
+    width: 20%;
+    /* Make the sidebar full width on mobile */
+  }
+
+  /* Adjusting content margin for mobile */
+  .container {
+    padding: 20px;
+    /* Add padding to the container for mobile */
+  }
+
+  /* Adjusting banner text size for mobile */
+  .centered {
+    font-size: 20px;
+    /* Reduce font size for mobile */
+  }
+
+  /* Adjusting title text size for mobile */
+  #title {
+    font-size: 16px;
+
+  }
+
+  .footer {
+    bottom: 0;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+  }
+}

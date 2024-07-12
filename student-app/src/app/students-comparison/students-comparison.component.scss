@@ -1,0 +1,34 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.highcharts-chart {
+    width: 80%;
+    max-width: 800px;
+}
+
+.mat-form-field {
+    width: 80%;
+    max-width: 400px;
+}
+
+@media only screen and (max-width: 768px) {
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .highcharts-chart {
+        width: 80%;
+        max-width: 200px;
+    }
+
+    .mat-form-field {
+        width: 80%;
+        max-width: 100px;
+    }
+}

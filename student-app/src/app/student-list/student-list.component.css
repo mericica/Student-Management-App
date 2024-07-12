@@ -1,0 +1,36 @@
+.student-card {
+  display: flex;
+}
+
+.searchBar {
+  border: 1px solid #dfe1e5;
+  display: flex;
+  gap: 10px;
+  border-radius: 24px;
+  box-shadow: 5px 5px 5px #888;
+  align-items: center;
+  padding: 10px;
+  width: 800px;
+  margin-top: 4%;
+  margin-bottom: 4%;
+}
+
+#search-input {
+  border: none;
+  outline: none;
+  flex: 1;
+  padding: 8px;
+  font-size: 16px;
+}
+
+#search-button {
+  background-color: white;
+  float: right;
+  margin: 0 10px;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+  border-radius: 50px;
+}
+
+/*# sourceMappingURL=student-list.component.css.map */
